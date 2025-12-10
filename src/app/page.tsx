@@ -291,8 +291,6 @@ export default function WealthFoundationWebsite() {
 
   const t = translations[language];
 
-  // CONTINUED FROM PART 1...
-
   // Hero slides content
   const heroSlides = [
     {
@@ -550,8 +548,6 @@ export default function WealthFoundationWebsite() {
   };
 
   const getIcon = (name: string) => iconMap[name] || Calculator;
-
-  // CONTINUED FROM PART 2...
 
   // Render Navigation
   const renderNavigation = () => (
@@ -814,8 +810,6 @@ export default function WealthFoundationWebsite() {
     </footer>
   );
 
-  // CONTINUED FROM PART 3...
-
   // Render Home Page
   const renderHomePage = () => (
     <main className="pt-20">
@@ -841,22 +835,21 @@ export default function WealthFoundationWebsite() {
               {heroSlide === 0 ? (
                 // Company Slide
                 <div className="animate-fadeInUp">
-                  <div className="inline-flex items-center gap-2 px-4 py-2 bg-white/10 backdrop-blur-sm rounded-full border border-white/30 mb-6">
-                    <div className="w-2 h-2 bg-gold-400 rounded-full animate-pulse"></div>
-                    <span className="text-gold-400 text-sm font-semibold">{t.hero.badge}</span>
-                  </div>
+                  <div className="inline-flex items-center gap-2 px-4 py-2 bg-orange-100 backdrop-blur-sm rounded-full border border-orange-300 mb-6">
+                    <div className="w-2 h-2 bg-orange-600 rounded-full animate-pulse"></div>
+                    <span className="text-orange-600 text-sm font-semibold">{t.hero.badge}</span>
                   
-                  <h1 className="text-5xl lg:text-6xl xl:text-7xl font-serif font-bold text-white leading-tight mb-6">
+                  <h1 className="text-5xl lg:text-6xl xl:text-7xl font-serif font-bold text-navy-900 leading-tight mb-6">
                     {heroSlides[0].title}
                   </h1>
                   
-                  <p className="text-xl text-navy-200 font-light mb-8 leading-relaxed">
+                  <p className="text-xl text-gray-700 font-light mb-8 leading-relaxed">
                     {heroSlides[0].description}
                   </p>
 
                   <div className="space-y-3 mb-10">
                     {heroSlides[0].taglines?.map((tagline, idx) => (
-                      <div key={idx} className="flex items-center gap-3 text-navy-200 animate-fadeInUp" style={{ animationDelay: `${idx * 150}ms` }}>
+                      <div key={idx} className="flex items-center gap-3 text-gray-800 animate-fadeInUp" style={{ animationDelay: `${idx * 150}ms` }}>
                         <div className="w-2 h-2 bg-orange-500 rounded-full flex-shrink-0"></div>
                         <span className="text-lg font-medium">{tagline}</span>
                       </div>
@@ -1035,8 +1028,6 @@ export default function WealthFoundationWebsite() {
           </div>
         </div>
       </section>
-
-      // CONTINUED FROM PART 4A...
 
 {/* Services Preview */}
 <section className="py-24 bg-gradient-to-br from-navy-50 via-white to-orange-50">
@@ -1229,8 +1220,6 @@ export default function WealthFoundationWebsite() {
 </section>
 </main>
 );
-
-// CONTINUED FROM PART 4B...
 
   // Render About Page
   const renderAboutPage = () => (
@@ -1486,8 +1475,6 @@ export default function WealthFoundationWebsite() {
       </section>
     </main>
   );
-
-  // CONTINUED FROM PART 5...
 
   // Render Services Page
   const renderServicesPage = () => (
@@ -1864,8 +1851,6 @@ export default function WealthFoundationWebsite() {
       </section>
     </main>
   );
-
-  // CONTINUED FROM PART 6...
 
   // Main Render
   return (
