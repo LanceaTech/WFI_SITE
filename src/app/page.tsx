@@ -560,7 +560,7 @@ export default function WealthFoundationWebsite() {
             className="flex items-center space-x-3 group"
           >
             <div className="w-12 h-12 bg-gradient-to-br from-gold-400 to-gold-600 rounded-xl flex items-center justify-center shadow-lg group-hover:shadow-xl transition-all duration-300">
-              <span className="text-white font-serif font-bold text-xl">W</span>
+              <span className="text-navy font-serif font-bold text-xl">W</span>
             </div>
             <div className="hidden sm:block">
               <span className="font-serif font-bold text-xl text-navy-800 tracking-tight">
@@ -814,19 +814,17 @@ export default function WealthFoundationWebsite() {
   const renderHomePage = () => (
     <main className="pt-20">
       {/* Hero Section with Slider */}
-      <section className="relative min-h-[90vh] flex items-center overflow-hidden bg-gradient-to-br from-navy-900 via-navy-800 to-navy-900">
+      <section className="relative min-h-[90vh] flex items-center overflow-hidden bg-white">
         {/* Animated Background */}
-        <div className="absolute inset-0 opacity-40">
-          <div className="absolute top-0 left-0 w-96 h-96 bg-gold-400/30 rounded-full blur-3xl animate-pulse"></div>
-          <div className="absolute bottom-0 right-0 w-[600px] h-[600px] bg-orange-500/20 rounded-full blur-3xl animate-pulse" style={{ animationDelay: '1s' }}></div>
-          <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] bg-navy-600/20 rounded-full blur-3xl"></div>
+        <div className="absolute inset-0 opacity-10">
+          <div className="absolute top-0 left-0 w-96 h-96 bg-orange-200 rounded-full blur-3xl"></div>
+          <div className="absolute bottom-0 right-0 w-[600px] h-[600px] bg-gold-200 rounded-full blur-3xl"></div>
         </div>
         {/* Grid Pattern */}
         <div className="absolute inset-0 opacity-10" style={{
           backgroundImage: 'linear-gradient(rgba(251, 191, 36, 0.3) 1px, transparent 1px), linear-gradient(90deg, rgba(251, 191, 36, 0.3) 1px, transparent 1px)',
           backgroundSize: '50px 50px'
         }}></div>
-
         {/* Hero Content */}
         <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20 w-full">
           <div className="grid lg:grid-cols-2 gap-16 items-center">
@@ -876,23 +874,23 @@ export default function WealthFoundationWebsite() {
               ) : (
                 // CEO Slide
                 <div className="animate-fadeInUp">
-                  <div className="inline-flex items-center gap-2 px-4 py-2 bg-gold-400/20 backdrop-blur-sm rounded-full border border-gold-400/40 mb-6">
-                    <span className="text-gold-400 text-sm font-semibold">{t.hero.ceoBadge}</span>
+                  <div className="inline-flex items-center gap-2 px-4 py-2 bg-blue-100 backdrop-blur-sm rounded-full border border-blue-300 mb-6">
+                    <span className="text-blue-700 text-sm font-semibold">{t.hero.ceoBadge}</span>
                   </div>
                   
-                  <h2 className="text-4xl lg:text-5xl font-serif font-bold text-white mb-2">
+                  <h2 className="text-4xl lg:text-5xl font-serif font-bold text-blue-700 mb-2">
                     {heroSlides[1].name}
                   </h2>
                   <p className="text-xl text-gold-400 font-semibold mb-2">{heroSlides[1].title}</p>
-                  <p className="text-navy-300 font-medium mb-6">{heroSlides[1].credentials} | {heroSlides[1].experience}</p>
+                  <p className="text-gray-600 font-medium mb-6">{heroSlides[1].credentials} | {heroSlides[1].experience}</p>
                   
-                  <p className="text-lg text-navy-200 leading-relaxed mb-8">
+                  <p className="text-lg text-gray-700 leading-relaxed mb-8">
                     {heroSlides[1].bio}
                   </p>
 
                   <div className="grid grid-cols-2 gap-4">
                     {heroSlides[1].achievements?.map((achievement, idx) => (
-                      <div key={idx} className="flex items-center gap-2 text-navy-200">
+                      <div key={idx} className="flex items-center gap-2 text-gray-800">
                         <CheckCircle className="w-5 h-5 text-gold-400 flex-shrink-0" />
                         <span className="text-sm font-medium">{achievement}</span>
                       </div>
@@ -919,7 +917,7 @@ export default function WealthFoundationWebsite() {
                       style={{ animationDelay: `${idx * 100}ms` }}
                     >
                       <stat.icon className="w-10 h-10 text-gold-400 mb-4" />
-                      <p className="text-4xl font-bold text-white mb-2">{stat.number}</p>
+                      <p className="text-4xl font-bold text-navy-900 mb-2">{stat.number}</p>
                       <p className="text-navy-300 text-sm font-medium">{stat.label}</p>
                     </div>
                   ))}
@@ -968,7 +966,7 @@ export default function WealthFoundationWebsite() {
                 key={idx}
                 onClick={() => setHeroSlide(idx)}
                 className={`h-2 rounded-full transition-all duration-300 ${
-                  idx === heroSlide ? 'w-12 bg-gold-400' : 'w-2 bg-white/40 hover:bg-white/60'
+                  idx === heroSlide ? 'w-12 bg-orange-500' : 'w-2 bg-gray-300 hover:bg-gray-400'
                 }`}
                 aria-label={`Slide ${idx + 1}`}
               />
