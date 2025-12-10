@@ -1023,11 +1023,15 @@ export default function WealthFoundationWebsite() {
             <p className="text-xl mb-6 font-medium">
               {t.problems.message}
             </p>
-            <button 
+
+            <button
               onClick={() => navigateTo('contact')}
-              className="px-8 py-4 bg-gradient-to-r from-navy-700 to-navy-900 hover:from-navy-800 hover:to-navy-950 text-white font-semibold rounded-lg shadow-lg transition-all duration-300 transform hover:-translate-y-0.5"
+              className="inline-flex items-center justify-center px-8 py-4 bg-gradient-to-r from-navy-700 to-navy-900 hover:from-navy-800 hover:to-navy-950 text-white font-semibold rounded-lg shadow-lg transition-all duration-300 transform hover:-translate-y-0.5"
             >
-              {t.problems.cta}
+              {t.problems?.cta ||
+                (language === 'en'
+                  ? "Let's Solve This Together"
+                  : '让我们一起解决')}
             </button>
           </div>
         </div>
