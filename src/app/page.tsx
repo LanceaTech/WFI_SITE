@@ -838,6 +838,7 @@ export default function WealthFoundationWebsite() {
                   <div className="inline-flex items-center gap-2 px-4 py-2 bg-orange-100 backdrop-blur-sm rounded-full border border-orange-300 mb-6">
                     <div className="w-2 h-2 bg-orange-600 rounded-full animate-pulse"></div>
                     <span className="text-orange-600 text-sm font-semibold">{t.hero.badge}</span>
+                  </div>
                   
                   <h1 className="text-5xl lg:text-6xl xl:text-7xl font-serif font-bold text-navy-900 leading-tight mb-6">
                     {heroSlides[0].title}
