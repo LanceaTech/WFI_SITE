@@ -30,6 +30,7 @@ import {
   Quote
 } from 'lucide-react';
 import { useForm, ValidationError } from '@formspree/react';
+import Image from 'next/image';
 
 // Types
 type PageType = 'home' | 'about' | 'services' | 'contact';
@@ -67,6 +68,24 @@ interface Translations {
   en: any;
   zh: any;
 }
+
+const WfiLogo: React.FC<{ className?: string }> = ({ className = 'w-16 h-16' }) => (
+  <div
+    className={
+      `relative ${className} flex items-center justify-center ` +
+      `rounded-lg overflow-hidden` // sharper, not too rounded
+    }
+  >
+    <Image
+      src="/wfi_logo.svg"              // put wfi_logo.svg in /public
+      alt="Wealth Foundation Institute logo"
+      fill                              // makes it cover the div
+      className="object-contain"
+      priority
+    />
+  </div>
+);
+
 
 // Main Component
 export default function WealthFoundationWebsite() {
@@ -559,9 +578,8 @@ export default function WealthFoundationWebsite() {
             onClick={() => navigateTo('home')}
             className="flex items-center space-x-3 group"
           >
-            <div className="w-12 h-12 bg-gradient-to-br from-gold-400 to-gold-600 rounded-xl flex items-center justify-center shadow-lg group-hover:shadow-xl transition-all duration-300">
-              <span className="text-navy font-serif font-bold text-xl">W</span>
-            </div>
+            <WfiLogo className="w-14 h-14" />   {/* <-- new centered PNG logo */}
+
             <div className="hidden sm:block">
               <span className="font-serif font-bold text-xl text-navy-800 tracking-tight">
                 {language === 'en' ? 'Wealth Foundation' : '财富基金'}
@@ -571,6 +589,7 @@ export default function WealthFoundationWebsite() {
               </span>
             </div>
           </button>
+
 
           {/* Desktop Navigation */}
           <div className="hidden lg:flex items-center space-x-1">
@@ -724,19 +743,19 @@ export default function WealthFoundationWebsite() {
         <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-12">
           {/* Company Info */}
           <div className="lg:col-span-1">
-            <div className="flex items-center space-x-3 mb-6">
-              <div className="w-12 h-12 bg-gradient-to-br from-gold-400 to-gold-500 rounded-xl flex items-center justify-center">
-                <span className="text-navy-900 font-serif font-bold text-xl">W</span>
-              </div>
-              <div>
-                <span className="font-serif font-bold text-lg text-white">
-                  {language === 'en' ? 'Wealth Foundation' : '财富基金'}
-                </span>
-                <span className="block text-xs text-navy-300 tracking-widest uppercase">
-                  {language === 'en' ? 'Institute' : '学院'}
-                </span>
-              </div>
-            </div>
+          <div className="flex items-center space-x-3 mb-6">
+          <WfiLogo className="w-14 h-14" />   {/* PNG logo reused in footer */}
+
+          <div>
+            <span className="font-serif font-bold text-lg text-white">
+              {language === 'en' ? 'Wealth Foundation' : '财富基金'}
+            </span>
+            <span className="block text-xs text-navy-300 tracking-widest uppercase">
+              {language === 'en' ? 'Institute' : '学院'}
+            </span>
+          </div>
+        </div>
+
             <p className="text-navy-300 text-sm leading-relaxed mb-6">
               {t.footer.tagline}
             </p>
