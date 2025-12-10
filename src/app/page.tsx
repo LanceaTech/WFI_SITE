@@ -1634,7 +1634,7 @@ export default function WealthFoundationWebsite() {
           <h2 className="text-4xl font-serif font-bold text-black mb-6">
             {language === 'en' ? 'Not Sure Which Service You Need?' : '不确定需要哪项服务？'}
           </h2>
-          <p className="text-xl text-navy-200 mb-10">
+          <p className="text-xl text-navy-600 mb-10">
             {language === 'en'
               ? "Schedule a free consultation and we'll help you identify the right solutions for your business."
               : '安排免费咨询，我们将帮助您确定适合您业务的正确解决方案。'}
