@@ -1053,40 +1053,39 @@ export default function WealthFoundationWebsite() {
     <div className="grid lg:grid-cols-3 gap-8 items-stretch">
       {Object.entries(servicesData).map(([key, category], idx) => {
         const IconComponent = getIcon(category.icon);
+
+        const headerBg =
+          idx === 0
+            ? 'bg-gradient-to-r from-orange-500 to-orange-600'
+            : idx === 1
+            ? 'bg-gradient-to-r from-navy-600 to-navy-800'
+            : 'bg-gradient-to-r from-gold-500 to-gold-600';
+
         return (
           <div
             key={key}
             className="group relative bg-white rounded-3xl p-8 shadow-lg hover:shadow-2xl transition-all duration-500 border-2 border-gray-100 hover:border-orange-300 overflow-hidden hover:-translate-y-1 flex flex-col"
           >
-            {/* Decorative Corner */}
-            <div className="absolute top-0 right-0 w-32 h-32 bg-gradient-to-bl from-orange-100/50 to-transparent rounded-bl-full opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+            {/* Decorative glow in corner */}
+            <div className="absolute top-0 right-0 w-32 h-32 bg-gradient-to-bl from-orange-100/60 to-transparent rounded-bl-full opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
 
             <div className="relative z-10 flex flex-col h-full">
-              <div
-                className={`w-18 h-18 rounded-2xl flex items-center justify-center mb-6 transition-all duration-300 group-hover:scale-110 shadow-lg ${
-                  idx === 0
-                    ? 'bg-gradient-to-br from-orange-500 to-orange-600'
-                    : idx === 1
-                    ? 'bg-gradient-to-br from-navy-600 to-navy-800'
-                    : 'bg-gradient-to-br from-gold-500 to-gold-600'
-                }`}
-              >
-                <IconComponent className="w-10 h-10 text-white" />
+              {/* COLOURED BANNER WITH ICON – this fixes the white header */}
+              <div className={`mb-6 h-16 rounded-3xl ${headerBg} flex items-center justify-center shadow-md`}>
+                <IconComponent className="w-8 h-8 text-white" />
               </div>
 
               <h3 className="text-2xl font-bold text-navy-900 mb-4">
                 {category.title}
               </h3>
+
               <p className="text-gray-700 mb-6 leading-relaxed">
                 {category.description}
               </p>
 
               <ul className="space-y-3 mb-8">
                 {category.services.slice(0, 3).map((service, sIdx) => (
-                  <li
-                    key={sIdx}
-                    className="flex items-center gap-3 text-gray-800"
-                  >
+                  <li key={sIdx} className="flex items-center gap-3 text-gray-800">
                     <div className="w-2 h-2 bg-gold-500 rounded-full flex-shrink-0" />
                     <span className="text-sm font-medium">
                       {language === 'en' ? service.name : service.name_zh}
@@ -1095,7 +1094,7 @@ export default function WealthFoundationWebsite() {
                 ))}
               </ul>
 
-              {/* Stick this to the bottom */}
+              {/* Bottom-aligned CTA */}
               <button
                 onClick={() => {
                   setExpandedService(key);
@@ -1331,39 +1330,52 @@ export default function WealthFoundationWebsite() {
               {
                 icon: Users,
                 title: language === 'en' ? 'Proactive Partnership' : '主动合作',
-                description: language === 'en' 
-                  ? 'Led by approachable partners, we use insights, experience and fresh perspective to understand complex issues and find workable solutions.'
-                  : '由平易近人的合作伙伴领导，我们利用洞察力、经验和新视角来理解复杂问题并找到可行的解决方案。'
+                description:
+                  language === 'en'
+                    ? 'Led by approachable partners, we use insights, experience and a fresh perspective to understand complex issues and find workable solutions.'
+                    : '由平易近人的合伙人领导，我们利用洞察力、经验和新视角来理解复杂问题并找到可行的解决方案。'
               },
               {
                 icon: Target,
                 title: language === 'en' ? 'Client-Centered Focus' : '以客户为中心',
-                description: language === 'en'
-                  ? 'We are interested in your challenges and growth ambitions. Instead of ready-made answers, we listen, ask intelligent questions, and engage in deeper business discussions.'
-                  : '我们对您的挑战和增长雄心感兴趣。我们不提供现成的答案，而是倾听、提出明智的问题并进行更深入的业务讨论。'
+                description:
+                  language === 'en'
+                    ? 'We are interested in your challenges and growth ambitions. Instead of ready-made answers, we listen, ask intelligent questions, and engage in deeper business discussions.'
+                    : '我们关注您的挑战和增长目标。我们不是提供现成答案，而是倾听、提出有见地的问题，并进行更深入的业务讨论。'
               },
               {
-                icon: Award,
+                icon: Handshake,
                 title: language === 'en' ? 'Hands-On Service' : '实践服务',
-                description: language === 'en'
-                  ? 'Personal, hands-on services from senior professionals continue to be the hallmark of our client experience. We are committed to meeting your objectives through practical solutions.'
-                  : '来自高级专业人士的个人化实践服务继续是我们客户体验的标志。我们致力于通过实用的解决方案实现您的目标。'
+                description:
+                  language === 'en'
+                    ? 'Personal, hands-on services from senior professionals remain a hallmark of our client experience. We are committed to meeting your objectives through practical solutions.'
+                    : '来自高级专业人士的个性化实践服务始终是我们客户体验的标志。我们致力于通过务实的解决方案实现您的目标。'
               }
-            ].map((item, idx) => (
-              <div
-                key={idx}
-                className="bg-white p-10 rounded-3xl shadow-lg border-2 border-orange-100 hover:border-orange-300 transition-all duration-300 hover:-translate-y-1 flex flex-col h-full"
-              >
-                <div className="w-18 h-18 bg-gradient-to-br from-gold-400 to-gold-600 rounded-2xl flex items-center justify-center mb-6 shadow-lg">
-                  <item.icon className="w-10 h-10 text-white" />
+            ].map((item, idx) => {
+              const headerBg =
+                idx === 0
+                  ? 'bg-gradient-to-r from-orange-500 to-orange-600'
+                  : idx === 1
+                  ? 'bg-gradient-to-r from-navy-600 to-navy-800'
+                  : 'bg-gradient-to-r from-gold-500 to-gold-600';
+
+              return (
+                <div
+                  key={idx}
+                  className="bg-white p-10 rounded-3xl shadow-lg border-2 border-orange-100 hover:border-orange-300 transition-all duration-300 hover:-translate-y-1 flex flex-col h-full"
+                >
+                  {/* COLOURED BANNER WITH ICON */}
+                  <div className={`mb-6 h-14 rounded-3xl ${headerBg} flex items-center justify-center shadow-md`}>
+                    <item.icon className="w-8 h-8 text-white" />
+                  </div>
+
+                  <h3 className="text-2xl font-bold text-navy-900 mb-4">{item.title}</h3>
+                  <p className="text-gray-700 leading-relaxed flex-1">{item.description}</p>
                 </div>
-                <h3 className="text-2xl font-bold text-navy-900 mb-4">{item.title}</h3>
-                <p className="text-gray-700 leading-relaxed flex-1">
-                  {item.description}
-                </p>
-              </div>
-            ))}
+              );
+            })}
           </div>
+
         </div>
       </section>
 
