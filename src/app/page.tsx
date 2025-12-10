@@ -644,7 +644,7 @@ export default function WealthFoundationWebsite() {
 
             <button
               onClick={() => navigateTo('contact')}
-              className="ml-4 px-6 py-2.5 bg-gradient-to-r from-orange-500 to-orange-600 hover:from-orange-600 hover:to-orange-700 text-black text-sm font-semibold rounded-lg shadow-lg shadow-orange-500/25 hover:shadow-orange-500/40 transition-all duration-300 transform hover:-translate-y-0.5"
+              className="ml-4 px-6 py-2.5 bg-gradient-to-r from-orange-500 to-orange-600 hover:from-orange-600 hover:to-orange-700 text-white text-sm font-semibold rounded-lg shadow-lg shadow-orange-500/25 hover:shadow-orange-500/40 transition-all duration-300 transform hover:-translate-y-0.5"
             >
               {t.nav.contact}
             </button>
@@ -856,16 +856,19 @@ export default function WealthFoundationWebsite() {
                   </div>
 
                   <div className="flex flex-col sm:flex-row gap-4">
+                    {/* Primary CTA – unchanged */}
                     <button 
                       onClick={() => navigateTo('contact')}
-                      className="group px-8 py-4 bg-gradient-to-r from-orange-500 to-orange-600 hover:from-orange-600 hover:to-orange-700 text-white font-semibold rounded-lg shadow-xl shadow-orange-500/30 transition-all duration-300 transform hover:-translate-y-1 flex items-center justify-center gap-2"
+                      className="group px-8 py-4 bg-gradient-to-r from-orange-500 to-orange-600 hover:from-orange-600 hover:to-orange-700 text-white font-semibold rounded-lg shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1 flex items-center justify-center gap-2"
                     >
                       {t.hero.cta1}
                       <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
                     </button>
+
+                    {/* Secondary CTA – fixed */}
                     <button
                       onClick={() => navigateTo('services')}
-                      className="px-8 py-4 border-2 border-navy-900/10 hover:border-navy-900/40 hover:bg-white text-navy-900 font-semibold rounded-lg shadow-sm transition-all duration-300"
+                      className="px-8 py-4 border-2 border-navy-900/15 bg-white/90 text-navy-900 font-semibold rounded-lg shadow-sm hover:bg-white hover:border-navy-900/40 hover:shadow-md transition-all duration-300"
                     >
                       {t.hero.cta2}
                     </button>
@@ -1521,7 +1524,7 @@ export default function WealthFoundationWebsite() {
             <p className="text-gold-400 font-bold tracking-widest uppercase text-sm mb-4">
               {language === 'en' ? 'What We Offer' : '我们提供什么'}
             </p>
-            <h1 className="text-5xl lg:text-6xl font-serif font-bold text-white mb-6">
+            <h1 className="text-5xl lg:text-6xl font-serif font-bold text-black mb-6">
               {language === 'en' ? 'Our Services' : '我们的服务'}
             </h1>
             <p className="text-xl text-navy-200 max-w-3xl mx-auto">
@@ -1628,7 +1631,7 @@ export default function WealthFoundationWebsite() {
       {/* CTA */}
       <section className="py-24 bg-gradient-to-br from-navy-900 to-navy-800">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <h2 className="text-4xl font-serif font-bold text-white mb-6">
+          <h2 className="text-4xl font-serif font-bold text-black mb-6">
             {language === 'en' ? 'Not Sure Which Service You Need?' : '不确定需要哪项服务？'}
           </h2>
           <p className="text-xl text-navy-200 mb-10">
@@ -1660,7 +1663,7 @@ export default function WealthFoundationWebsite() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
           <div className="text-center">
             <p className="text-gold-400 font-bold tracking-widest uppercase text-sm mb-4">{t.contact.subtitle}</p>
-            <h1 className="text-5xl lg:text-6xl font-serif font-bold text-white mb-6">{t.contact.title}</h1>
+            <h1 className="text-5xl lg:text-6xl font-serif font-bold text-black mb-6">{t.contact.title}</h1>
             <p className="text-xl text-navy-200 max-w-3xl mx-auto">{t.contact.description}</p>
           </div>
         </div>
@@ -1799,7 +1802,7 @@ export default function WealthFoundationWebsite() {
 
             {/* Contact Info */}
             <div>
-              <div className="bg-gradient-to-br from-navy-800 to-navy-900 rounded-3xl p-10 text-white mb-8 shadow-2xl">
+              <div className="bg-gradient-to-br from-navy-800 to-navy-900 rounded-3xl p-10 text-black mb-8 shadow-2xl">
                 <h3 className="text-2xl font-serif font-bold mb-6">{t.contact.directContact}</h3>
                 
                 <div className="space-y-6">
