@@ -1023,15 +1023,11 @@ export default function WealthFoundationWebsite() {
             <p className="text-xl mb-6 font-medium">
               {t.problems.message}
             </p>
-
-            <button
+            <button 
               onClick={() => navigateTo('contact')}
-              className="inline-flex items-center justify-center px-8 py-4 bg-gradient-to-r from-navy-700 to-navy-900 hover:from-navy-800 hover:to-navy-950 text-white font-semibold rounded-lg shadow-lg transition-all duration-300 transform hover:-translate-y-0.5"
+              className="px-8 py-4 bg-gradient-to-r from-orange-300 to-orange-600 hover:from-navy-800 hover:to-navy-950 text-white font-semibold rounded-lg shadow-lg transition-all duration-300 transform hover:-translate-y-0.5"
             >
-              {t.problems?.cta ||
-                (language === 'en'
-                  ? "Let's Solve This Together"
-                  : '让我们一起解决')}
+              {t.problems.cta}
             </button>
           </div>
         </div>
@@ -1053,39 +1049,40 @@ export default function WealthFoundationWebsite() {
     <div className="grid lg:grid-cols-3 gap-8 items-stretch">
       {Object.entries(servicesData).map(([key, category], idx) => {
         const IconComponent = getIcon(category.icon);
-
-        const headerBg =
-          idx === 0
-            ? 'bg-gradient-to-r from-orange-500 to-orange-600'
-            : idx === 1
-            ? 'bg-gradient-to-r from-navy-600 to-navy-800'
-            : 'bg-gradient-to-r from-gold-500 to-gold-600';
-
         return (
           <div
             key={key}
             className="group relative bg-white rounded-3xl p-8 shadow-lg hover:shadow-2xl transition-all duration-500 border-2 border-gray-100 hover:border-orange-300 overflow-hidden hover:-translate-y-1 flex flex-col"
           >
-            {/* Decorative glow in corner */}
-            <div className="absolute top-0 right-0 w-32 h-32 bg-gradient-to-bl from-orange-100/60 to-transparent rounded-bl-full opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+            {/* Decorative Corner */}
+            <div className="absolute top-0 right-0 w-32 h-32 bg-gradient-to-bl from-orange-100/50 to-transparent rounded-bl-full opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
 
             <div className="relative z-10 flex flex-col h-full">
-              {/* COLOURED BANNER WITH ICON – this fixes the white header */}
-              <div className={`mb-6 h-16 rounded-3xl ${headerBg} flex items-center justify-center shadow-md`}>
-                <IconComponent className="w-8 h-8 text-white" />
+              <div
+                className={`w-18 h-18 rounded-2xl flex items-center justify-center mb-6 transition-all duration-300 group-hover:scale-110 shadow-lg ${
+                  idx === 0
+                    ? 'bg-gradient-to-br from-orange-500 to-orange-600'
+                    : idx === 1
+                    ? 'bg-gradient-to-br from-orange-500 to-orange-600'
+                    : 'bg-gradient-to-br from-orange-500 to-orange-600'
+                }`}
+              >
+                <IconComponent className="w-10 h-10 text-white" />
               </div>
 
               <h3 className="text-2xl font-bold text-navy-900 mb-4">
                 {category.title}
               </h3>
-
               <p className="text-gray-700 mb-6 leading-relaxed">
                 {category.description}
               </p>
 
               <ul className="space-y-3 mb-8">
                 {category.services.slice(0, 3).map((service, sIdx) => (
-                  <li key={sIdx} className="flex items-center gap-3 text-gray-800">
+                  <li
+                    key={sIdx}
+                    className="flex items-center gap-3 text-gray-800"
+                  >
                     <div className="w-2 h-2 bg-gold-500 rounded-full flex-shrink-0" />
                     <span className="text-sm font-medium">
                       {language === 'en' ? service.name : service.name_zh}
@@ -1094,7 +1091,7 @@ export default function WealthFoundationWebsite() {
                 ))}
               </ul>
 
-              {/* Bottom-aligned CTA */}
+              {/* Stick this to the bottom */}
               <button
                 onClick={() => {
                   setExpandedService(key);
@@ -1238,7 +1235,7 @@ export default function WealthFoundationWebsite() {
             <svg className="w-6 h-6" viewBox="0 0 24 24" fill="currentColor">
               <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893A11.821 11.821 0 0020.885 3.488" />
             </svg>
-            {language === 'en' ? 'WhatsApp Us' : 'WhatsApp联系我们'}
+            {language === 'en' ? 'WhatsApp Us' : 'WhatsApp 联系我们'}
           </a>
         </div>
       </div>
@@ -1266,7 +1263,7 @@ export default function WealthFoundationWebsite() {
           <div className="text-center">
             <p className="text-gold-400 font-bold tracking-widest uppercase text-sm mb-4">{t.about.subtitle}</p>
             <h1 className="text-5xl lg:text-6xl font-serif font-bold text-black mb-6">{t.about.title}</h1>
-            <p className="text-xl text-navy-200 max-w-3xl mx-auto">{t.about.description}</p>
+            <p className="text-xl text-navy-600 max-w-3xl mx-auto">{t.about.description}</p>
           </div>
         </div>
       </section>
@@ -1330,52 +1327,39 @@ export default function WealthFoundationWebsite() {
               {
                 icon: Users,
                 title: language === 'en' ? 'Proactive Partnership' : '主动合作',
-                description:
-                  language === 'en'
-                    ? 'Led by approachable partners, we use insights, experience and a fresh perspective to understand complex issues and find workable solutions.'
-                    : '由平易近人的合伙人领导，我们利用洞察力、经验和新视角来理解复杂问题并找到可行的解决方案。'
+                description: language === 'en' 
+                  ? 'Led by approachable partners, we use insights, experience and fresh perspective to understand complex issues and find workable solutions.'
+                  : '由平易近人的合作伙伴领导，我们利用洞察力、经验和新视角来理解复杂问题并找到可行的解决方案。'
               },
               {
                 icon: Target,
                 title: language === 'en' ? 'Client-Centered Focus' : '以客户为中心',
-                description:
-                  language === 'en'
-                    ? 'We are interested in your challenges and growth ambitions. Instead of ready-made answers, we listen, ask intelligent questions, and engage in deeper business discussions.'
-                    : '我们关注您的挑战和增长目标。我们不是提供现成答案，而是倾听、提出有见地的问题，并进行更深入的业务讨论。'
+                description: language === 'en'
+                  ? 'We are interested in your challenges and growth ambitions. Instead of ready-made answers, we listen, ask intelligent questions, and engage in deeper business discussions.'
+                  : '我们对您的挑战和增长雄心感兴趣。我们不提供现成的答案，而是倾听、提出明智的问题并进行更深入的业务讨论。'
               },
               {
-                icon: Handshake,
+                icon: Award,
                 title: language === 'en' ? 'Hands-On Service' : '实践服务',
-                description:
-                  language === 'en'
-                    ? 'Personal, hands-on services from senior professionals remain a hallmark of our client experience. We are committed to meeting your objectives through practical solutions.'
-                    : '来自高级专业人士的个性化实践服务始终是我们客户体验的标志。我们致力于通过务实的解决方案实现您的目标。'
+                description: language === 'en'
+                  ? 'Personal, hands-on services from senior professionals continue to be the hallmark of our client experience. We are committed to meeting your objectives through practical solutions.'
+                  : '来自高级专业人士的个人化实践服务继续是我们客户体验的标志。我们致力于通过实用的解决方案实现您的目标。'
               }
-            ].map((item, idx) => {
-              const headerBg =
-                idx === 0
-                  ? 'bg-gradient-to-r from-orange-500 to-orange-600'
-                  : idx === 1
-                  ? 'bg-gradient-to-r from-navy-600 to-navy-800'
-                  : 'bg-gradient-to-r from-gold-500 to-gold-600';
-
-              return (
-                <div
-                  key={idx}
-                  className="bg-white p-10 rounded-3xl shadow-lg border-2 border-orange-100 hover:border-orange-300 transition-all duration-300 hover:-translate-y-1 flex flex-col h-full"
-                >
-                  {/* COLOURED BANNER WITH ICON */}
-                  <div className={`mb-6 h-14 rounded-3xl ${headerBg} flex items-center justify-center shadow-md`}>
-                    <item.icon className="w-8 h-8 text-white" />
-                  </div>
-
-                  <h3 className="text-2xl font-bold text-navy-900 mb-4">{item.title}</h3>
-                  <p className="text-gray-700 leading-relaxed flex-1">{item.description}</p>
+            ].map((item, idx) => (
+              <div
+                key={idx}
+                className="bg-white p-10 rounded-3xl shadow-lg border-2 border-orange-100 hover:border-orange-300 transition-all duration-300 hover:-translate-y-1 flex flex-col h-full"
+              >
+                <div className="w-18 h-18 bg-gradient-to-br from-orange-400 to-gold-600 rounded-2xl flex items-center justify-center mb-6 shadow-lg">
+                  <item.icon className="w-10 h-10 text-white" />
                 </div>
-              );
-            })}
+                <h3 className="text-2xl font-bold text-navy-900 mb-4">{item.title}</h3>
+                <p className="text-gray-700 leading-relaxed flex-1">
+                  {item.description}
+                </p>
+              </div>
+            ))}
           </div>
-
         </div>
       </section>
 
@@ -1543,7 +1527,7 @@ export default function WealthFoundationWebsite() {
             <h1 className="text-5xl lg:text-6xl font-serif font-bold text-black mb-6">
               {language === 'en' ? 'Our Services' : '我们的服务'}
             </h1>
-            <p className="text-xl text-navy-200 max-w-3xl mx-auto">
+            <p className="text-xl text-navy-600 max-w-3xl mx-auto">
               {language === 'en'
                 ? 'Comprehensive financial solutions tailored to your business needs, from day-to-day bookkeeping to strategic financial advisory.'
                 : '为您的业务需求量身定制的全面财务解决方案，从日常簿记到战略财务咨询。'}
@@ -1567,7 +1551,7 @@ export default function WealthFoundationWebsite() {
                     className={`p-8 rounded-3xl cursor-pointer transition-all duration-300 ${
                       isExpanded 
                         ? 'bg-gradient-to-br from-navy-800 to-navy-900 text-white shadow-2xl border-2 border-gold-400/30' 
-                        : 'bg-gradient-to-br from-navy-50 to-white border-2 border-gray-300 hover:border-orange-300 hover:shadow-lg'
+                        : 'bg-gradient-to-br from-navy-400 to-white border-2 border-gray-300 hover:border-orange-300 hover:shadow-lg'
                     }`}
                     onClick={() => setExpandedService(isExpanded ? null : key)}
                   >
@@ -1575,18 +1559,18 @@ export default function WealthFoundationWebsite() {
                       <div className="flex items-center gap-6">
                         <div className={`w-18 h-18 rounded-2xl flex items-center justify-center shadow-lg ${
                           isExpanded 
-                            ? 'bg-gradient-to-br from-gold-400 to-gold-600' 
+                            ? 'bg-gradient-to-br from-orange-300 to-orange-500' 
                             : categoryIdx === 0 ? 'bg-gradient-to-br from-orange-500 to-orange-600' :
-                              categoryIdx === 1 ? 'bg-gradient-to-br from-navy-600 to-navy-800' :
-                              'bg-gradient-to-br from-gold-500 to-gold-600'
+                              categoryIdx === 1 ? 'bg-gradient-to-br from-orange-600 to-orange-600' :
+                              'bg-gradient-to-br from-orange-500 to-orange-600'
                         }`}>
                           <IconComponent className={`w-10 h-10 ${isExpanded ? 'text-white' : 'text-white'}`} />
                         </div>
                         <div>
-                          <h2 className={`text-2xl font-bold ${isExpanded ? 'text-white' : 'text-navy-900'}`}>
+                          <h2 className={`text-2xl font-bold ${isExpanded ? 'text-black' : 'text-navy-900'}`}>
                             {category.title}
                           </h2>
-                          <p className={`mt-1 ${isExpanded ? 'text-navy-200' : 'text-gray-700'}`}>
+                          <p className={`mt-1 ${isExpanded ? 'text-navy-600' : 'text-navy-700'}`}>
                             {category.description}
                           </p>
                         </div>
@@ -1680,7 +1664,7 @@ export default function WealthFoundationWebsite() {
           <div className="text-center">
             <p className="text-gold-400 font-bold tracking-widest uppercase text-sm mb-4">{t.contact.subtitle}</p>
             <h1 className="text-5xl lg:text-6xl font-serif font-bold text-black mb-6">{t.contact.title}</h1>
-            <p className="text-xl text-navy-200 max-w-3xl mx-auto">{t.contact.description}</p>
+            <p className="text-xl text-navy-600 max-w-3xl mx-auto">{t.contact.description}</p>
           </div>
         </div>
       </section>
@@ -1827,9 +1811,9 @@ export default function WealthFoundationWebsite() {
                       <Phone className="w-7 h-7 text-gold-400" />
                     </div>
                     <div>
-                      <p className="text-navy-200 text-sm mb-1">{t.contact.callWhatsApp}</p>
+                      <p className="text-navy-600 text-sm mb-1">{t.contact.callWhatsApp}</p>
                       <a href="tel:+6597486325" className="text-xl font-bold hover:text-gold-400 transition-colors">+65 9748 6325</a>
-                      <p className="text-navy-300 text-sm mt-1">Carol Khoo</p>
+                      <p className="text-navy-600 text-sm mt-1">Carol Khoo</p>
                     </div>
                   </div>
 
@@ -1838,7 +1822,7 @@ export default function WealthFoundationWebsite() {
                       <Mail className="w-7 h-7 text-gold-400" />
                     </div>
                     <div>
-                      <p className="text-navy-200 text-sm mb-1">{t.contact.emailUs}</p>
+                      <p className="text-navy-600 text-sm mb-1">{t.contact.emailUs}</p>
                       <a href="mailto:carol2kmg@yahoo.com.sg" className="text-xl font-bold hover:text-gold-400 transition-colors break-all">carol2kmg@yahoo.com.sg</a>
                     </div>
                   </div>
@@ -1848,7 +1832,7 @@ export default function WealthFoundationWebsite() {
                       <MapPin className="w-7 h-7 text-gold-400" />
                     </div>
                     <div>
-                      <p className="text-navy-200 text-sm mb-1">{t.contact.location}</p>
+                      <p className="text-navy-600 text-sm mb-1">{t.contact.location}</p>
                       <p className="text-xl font-bold">{t.contact.singapore}</p>
                     </div>
                   </div>
@@ -1858,7 +1842,7 @@ export default function WealthFoundationWebsite() {
                       <Clock className="w-7 h-7 text-gold-400" />
                     </div>
                     <div>
-                      <p className="text-navy-200 text-sm mb-1">{t.contact.businessHours}</p>
+                      <p className="text-navy-600 text-sm mb-1">{t.contact.businessHours}</p>
                       <p className="text-xl font-bold">{t.contact.hours}</p>
                     </div>
                   </div>
