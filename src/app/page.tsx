@@ -165,7 +165,7 @@ export default function WealthFoundationWebsite() {
         businessHours: 'Business Hours',
         hours: 'Mon - Fri: 9AM - 6PM',
         chatWhatsApp: 'Chat on WhatsApp',
-        responseTime: '24hr Response Time',
+        responseTime: 'Quick Response Time',
         freeConsult: 'Free Initial Consultation'
       },
       about: {
@@ -1866,7 +1866,7 @@ export default function WealthFoundationWebsite() {
               {/* Quick Info Cards */}
               <div className="grid grid-cols-2 gap-4">
                 <div className="bg-gradient-to-br from-orange-100 to-orange-200 rounded-2xl p-6 text-center border-2 border-orange-300">
-                  <p className="text-4xl font-bold text-orange-700 mb-2">24hr</p>
+                  <p className="text-4xl font-bold text-orange-700 mb-2">Fast</p>
                   <p className="text-orange-800 text-sm font-bold">{t.contact.responseTime}</p>
                 </div>
                 <div className="bg-gradient-to-br from-gold-100 to-gold-200 rounded-2xl p-6 text-center border-2 border-gold-300">
