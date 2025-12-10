@@ -1019,8 +1019,8 @@ export default function WealthFoundationWebsite() {
             ))}
           </div>
 
-          <div className="text-center mt-16">
-            <p className="text-xl text-navy-800 mb-6 font-medium">
+          <div className="text-center mt-16 text-navy-900">
+            <p className="text-xl mb-6 font-medium">
               {t.problems.message}
             </p>
             <button 
