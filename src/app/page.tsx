@@ -1209,12 +1209,12 @@ export default function WealthFoundationWebsite() {
       <div className="absolute bottom-0 right-0 w-96 h-96 bg-orange-500/20 rounded-full blur-3xl"></div>
       
       <div className="relative z-10">
-        <h2 className="text-4xl lg:text-5xl font-serif font-bold text-white mb-6">
+        <h2 className="text-4xl lg:text-5xl font-serif font-bold text-black mb-6">
           {language === 'en' 
             ? 'Ready to Take Control of Your Finances?' 
             : '准备好掌控您的财务了吗？'}
         </h2>
-        <p className="text-xl text-navy-200 max-w-2xl mx-auto mb-10">
+        <p className="text-xl text-navy-600 max-w-2xl mx-auto mb-10">
           {language === 'en'
             ? 'Schedule your free consultation today and discover how we can transform your business finances from a source of stress into a strategic advantage.'
             : '立即安排您的免费咨询，了解我们如何将您的企业财务从压力来源转变为战略优势。'}
