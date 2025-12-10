@@ -1259,7 +1259,7 @@ export default function WealthFoundationWebsite() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
           <div className="text-center">
             <p className="text-gold-400 font-bold tracking-widest uppercase text-sm mb-4">{t.about.subtitle}</p>
-            <h1 className="text-5xl lg:text-6xl font-serif font-bold text-white mb-6">{t.about.title}</h1>
+            <h1 className="text-5xl lg:text-6xl font-serif font-bold text-black mb-6">{t.about.title}</h1>
             <p className="text-xl text-navy-200 max-w-3xl mx-auto">{t.about.description}</p>
           </div>
         </div>
