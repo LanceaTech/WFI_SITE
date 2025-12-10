@@ -863,9 +863,9 @@ export default function WealthFoundationWebsite() {
                       {t.hero.cta1}
                       <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
                     </button>
-                    <button 
+                    <button
                       onClick={() => navigateTo('services')}
-                      className="px-8 py-4 border-2 border-white/40 hover:border-white/70 hover:bg-white/10 text-white font-semibold rounded-lg transition-all duration-300"
+                      className="px-8 py-4 border-2 border-navy-900/10 hover:border-navy-900/40 hover:bg-white text-navy-900 font-semibold rounded-lg shadow-sm transition-all duration-300"
                     >
                       {t.hero.cta2}
                     </button>
@@ -1017,7 +1017,9 @@ export default function WealthFoundationWebsite() {
           </div>
 
           <div className="text-center mt-16">
-            <p className="text-xl text-navy-800 mb-6 font-medium">{t.problems.message}</p>
+            <p className="text-xl text-navy-800 mb-6 font-medium">
+              {t.problems.message}
+            </p>
             <button 
               onClick={() => navigateTo('contact')}
               className="px-8 py-4 bg-gradient-to-r from-navy-700 to-navy-900 hover:from-navy-800 hover:to-navy-950 text-white font-semibold rounded-lg shadow-lg transition-all duration-300 transform hover:-translate-y-0.5"
@@ -1032,51 +1034,70 @@ export default function WealthFoundationWebsite() {
 <section className="py-24 bg-gradient-to-br from-navy-50 via-white to-orange-50">
   <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
     <div className="text-center max-w-3xl mx-auto mb-16">
-      <p className="text-gold-600 font-bold tracking-widest uppercase text-sm mb-4">{t.services.subtitle}</p>
+      <p className="text-gold-600 font-bold tracking-widest uppercase text-sm mb-4">
+        {t.services.subtitle}
+      </p>
       <h2 className="text-4xl lg:text-5xl font-serif font-bold text-navy-900 mb-6">
         {t.services.title}
       </h2>
       <p className="text-xl text-gray-700">{t.services.description}</p>
     </div>
 
-    <div className="grid lg:grid-cols-3 gap-8">
+    <div className="grid lg:grid-cols-3 gap-8 items-stretch">
       {Object.entries(servicesData).map(([key, category], idx) => {
         const IconComponent = getIcon(category.icon);
         return (
-          <div 
+          <div
             key={key}
-            className="group relative bg-white rounded-3xl p-8 shadow-lg hover:shadow-2xl transition-all duration-500 border-2 border-gray-100 hover:border-orange-300 overflow-hidden hover:-translate-y-1"
+            className="group relative bg-white rounded-3xl p-8 shadow-lg hover:shadow-2xl transition-all duration-500 border-2 border-gray-100 hover:border-orange-300 overflow-hidden hover:-translate-y-1 flex flex-col"
           >
             {/* Decorative Corner */}
-            <div className="absolute top-0 right-0 w-32 h-32 bg-gradient-to-bl from-orange-100/50 to-transparent rounded-bl-full opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
-            
-            <div className="relative z-10">
-              <div className={`w-18 h-18 rounded-2xl flex items-center justify-center mb-6 transition-all duration-300 group-hover:scale-110 shadow-lg ${
-                idx === 0 ? 'bg-gradient-to-br from-orange-500 to-orange-600' :
-                idx === 1 ? 'bg-gradient-to-br from-navy-600 to-navy-800' :
-                'bg-gradient-to-br from-gold-500 to-gold-600'
-              }`}>
+            <div className="absolute top-0 right-0 w-32 h-32 bg-gradient-to-bl from-orange-100/50 to-transparent rounded-bl-full opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+
+            <div className="relative z-10 flex flex-col h-full">
+              <div
+                className={`w-18 h-18 rounded-2xl flex items-center justify-center mb-6 transition-all duration-300 group-hover:scale-110 shadow-lg ${
+                  idx === 0
+                    ? 'bg-gradient-to-br from-orange-500 to-orange-600'
+                    : idx === 1
+                    ? 'bg-gradient-to-br from-navy-600 to-navy-800'
+                    : 'bg-gradient-to-br from-gold-500 to-gold-600'
+                }`}
+              >
                 <IconComponent className="w-10 h-10 text-white" />
               </div>
-              
-              <h3 className="text-2xl font-bold text-navy-900 mb-4">{category.title}</h3>
-              <p className="text-gray-700 mb-6 leading-relaxed">{category.description}</p>
-              
+
+              <h3 className="text-2xl font-bold text-navy-900 mb-4">
+                {category.title}
+              </h3>
+              <p className="text-gray-700 mb-6 leading-relaxed">
+                {category.description}
+              </p>
+
               <ul className="space-y-3 mb-8">
                 {category.services.slice(0, 3).map((service, sIdx) => (
-                  <li key={sIdx} className="flex items-center gap-3 text-gray-800">
-                    <div className="w-2 h-2 bg-gold-500 rounded-full flex-shrink-0"></div>
-                    <span className="text-sm font-medium">{language === 'en' ? service.name : service.name_zh}</span>
+                  <li
+                    key={sIdx}
+                    className="flex items-center gap-3 text-gray-800"
+                  >
+                    <div className="w-2 h-2 bg-gold-500 rounded-full flex-shrink-0" />
+                    <span className="text-sm font-medium">
+                      {language === 'en' ? service.name : service.name_zh}
+                    </span>
                   </li>
                 ))}
               </ul>
 
-              <button 
-                onClick={() => { navigateTo('services'); setExpandedService(key); }}
-                className="group/btn flex items-center gap-2 text-orange-600 font-bold hover:text-orange-700 transition-colors"
+              {/* Stick this to the bottom */}
+              <button
+                onClick={() => {
+                  setExpandedService(key);
+                  navigateTo('services');
+                }}
+                className="mt-auto inline-flex items-center gap-2 text-orange-600 font-semibold hover:text-orange-700 transition-colors"
               >
                 {t.services.learnMore}
-                <ArrowRight className="w-4 h-4 group-hover/btn:translate-x-1 transition-transform" />
+                <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
               </button>
             </div>
           </div>
@@ -1085,6 +1106,7 @@ export default function WealthFoundationWebsite() {
     </div>
   </div>
 </section>
+
 
 {/* Testimonials */}
 <section 
@@ -1297,7 +1319,7 @@ export default function WealthFoundationWebsite() {
             <p className="text-xl text-gray-700">{t.about.approachDescription}</p>
           </div>
 
-          <div className="grid md:grid-cols-3 gap-8">
+          <div className="grid md:grid-cols-3 gap-8 items-stretch">
             {[
               {
                 icon: Users,
@@ -1321,12 +1343,17 @@ export default function WealthFoundationWebsite() {
                   : '来自高级专业人士的个人化实践服务继续是我们客户体验的标志。我们致力于通过实用的解决方案实现您的目标。'
               }
             ].map((item, idx) => (
-              <div key={idx} className="bg-white p-10 rounded-3xl shadow-lg border-2 border-gray-100 hover:shadow-2xl hover:border-orange-300 transition-all duration-300 hover:-translate-y-1">
-                <div className="w-18 h-18 bg-gradient-to-br from-navy-600 to-navy-900 rounded-2xl flex items-center justify-center mb-6 shadow-lg">
+              <div
+                key={idx}
+                className="bg-white p-10 rounded-3xl shadow-lg border-2 border-orange-100 hover:border-orange-300 transition-all duration-300 hover:-translate-y-1 flex flex-col h-full"
+              >
+                <div className="w-18 h-18 bg-gradient-to-br from-gold-400 to-gold-600 rounded-2xl flex items-center justify-center mb-6 shadow-lg">
                   <item.icon className="w-10 h-10 text-white" />
                 </div>
                 <h3 className="text-2xl font-bold text-navy-900 mb-4">{item.title}</h3>
-                <p className="text-gray-700 leading-relaxed">{item.description}</p>
+                <p className="text-gray-700 leading-relaxed flex-1">
+                  {item.description}
+                </p>
               </div>
             ))}
           </div>
