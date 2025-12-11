@@ -355,39 +355,36 @@ export default function WealthFoundationWebsite() {
   // Testimonials
   const testimonials: Testimonial[] = [
     {
-      name: "David Chen",
-      role: "CEO",
+      name: "Charles Maulino",
+      role: "Chief Executive Officer",
       role_zh: "首席执行官",
-      company: "TechVenture Pte Ltd",
-      content: "Wealth Foundation transformed our chaotic financial records into a streamlined system. Their strategic approach helped us secure Series A funding with confidence.",
-      content_zh: "财富基金将我们混乱的财务记录转变为精简的系统。他们的战略方法帮助我们自信地获得了A轮融资。",
+      company: "Distinction Oil Trading Pte Ltd",
+      content:
+        "Carol has supported our group for years as a senior consultant. She understands the complexities of international oil trading and has been instrumental in strengthening our accounting and management processes. Her professionalism, integrity and proactive guidance with clients, suppliers and auditors give us clear supervision and efficient execution. Highly recommended.",
+      content_zh:
+        "多年来，Carol 一直以高级顾问的身份支持我们的公司。她深谙国际石油贸易的复杂性，并在加强我们会计与管理流程方面发挥了关键作用。她具备高度的专业精神与诚信，并在与客户、供应商及审计师的合作中提供前瞻性建议，使我们的监督与执行更加清晰高效，值得高度推荐。",
       rating: 5
     },
     {
-      name: "Sarah Lim",
+      name: "Lalith Kumar",
       role: "Managing Director",
       role_zh: "董事总经理",
-      company: "Asian Retail Holdings",
-      content: "Professional, responsive, and genuinely invested in our success. Carol's team identified cost savings we never knew existed, improving our margins by 15%.",
-      content_zh: "专业、响应迅速，真正投入我们的成功。Carol的团队发现了我们从未知道的成本节约，将我们的利润率提高了15%。",
+      company: "L3M Technologies Pte Ltd",
+      content:
+        "We are truly grateful for Carol’s cost-effective and personalised services. She consistently delivers high quality work with strong accountability and dedication. Her ability to identify issues, troubleshoot quickly and coordinate her team has made our projects smooth and worry-free. We look forward to many more years of cooperation.",
+      content_zh:
+        "我们由衷感谢 Carol 为我们提供的高性价比且个性化的服务。她始终保持高质量的工作水准，并展现出极强的责任感与投入度。她能迅速发现问题并高效解决，同时带领团队让项目过程顺畅无忧。我们期待未来多年持续与她合作。",
       rating: 5
     },
     {
-      name: "Michael Wong",
-      role: "Founder",
-      role_zh: "创始人",
-      company: "GreenTech Solutions",
-      content: "From company setup to ongoing compliance, they've been our trusted partner for 5 years. Their proactive approach to tax planning has saved us significantly.",
-      content_zh: "从公司设立到持续合规，他们已经是我们5年的可靠合作伙伴。他们在税务规划方面的主动方法为我们节省了大量资金。",
-      rating: 5
-    },
-    {
-      name: "Jennifer Tan",
-      role: "CFO",
-      role_zh: "首席财务官",
-      company: "Meridian Investments",
-      content: "The level of detail and professionalism exceeded our expectations. Their audit preparation support made our annual audit seamless and stress-free.",
-      content_zh: "细节和专业程度超出了我们的预期。他们的审计准备支持使我们的年度审计无缝且无压力。",
+      name: "Ivy",
+      role: "Accountant",
+      role_zh: "董事",
+      company: "Joo Soon Metal Works Pte Ltd",
+      content:
+        "When our accounts fell behind and we were facing tax deadlines, Carol stepped in at very short notice. She helped us organise our books, reconcile past transactions and prepare the tax reports on time, avoiding unnecessary penalties and stress for the team. Since then she has been our trusted advisor, putting proper structure in place so that our compliance and reporting are now under control.",
+      content_zh:
+        "当我们的账目严重积压、又临近报税期限时，Carol 在非常紧迫的时间内介入提供协助。她帮我们整理账簿、核对过往交易，并按时完成报税工作，让公司避免了不必要的罚款和压力。从那以后，她一直是我们值得信赖的顾问，为公司建立了更完善的账务架构，使合规与报告工作都变得井然有序。",
       rating: 5
     }
   ];
