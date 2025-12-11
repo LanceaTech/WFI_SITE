@@ -379,7 +379,7 @@ export default function WealthFoundationWebsite() {
     {
       name: "Ivy",
       role: "Accountant",
-      role_zh: "会计",
+      role_zh: "会计师",
       company: "Joo Soon Metal Works Pte Ltd",
       content:
         "When our accounts fell behind and we were facing tax deadlines, Carol stepped in at very short notice. She helped us organise our books, reconcile past transactions and prepare the tax reports on time, avoiding unnecessary penalties and stress for the team. Since then she has been our trusted advisor, putting proper structure in place so that our compliance and reporting are now under control.",
