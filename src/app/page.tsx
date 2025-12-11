@@ -27,6 +27,7 @@ import {
   ChevronDown,
   Menu,
   X,
+  ShieldCheck,
   Quote
 } from 'lucide-react';
 import { useForm, ValidationError } from '@formspree/react';
@@ -326,16 +327,28 @@ export default function WealthFoundationWebsite() {
     {
       type: 'ceo',
       name: 'Carol Khoo',
-      title: language === 'en' ? 'Founder & Managing Director' : '创始人兼董事总经理',
-      credentials: 'CPA, ACCA, MBA',
-      experience: language === 'en' ? '20+ Years APAC Experience' : '20+年亚太经验',
-      bio: language === 'en' 
-        ? 'A visionary leader with over two decades of expertise in financial consulting and business advisory across the Asia-Pacific region. Carol has guided hundreds of businesses from startups to established enterprises, helping them achieve financial clarity and sustainable growth.'
-        : '一位富有远见的领导者，在亚太地区拥有二十多年的财务咨询和业务顾问专业知识。Carol已指导数百家企业从初创企业到成熟企业，帮助他们实现财务清晰和可持续增长。',
+      title: language === 'en'
+        ? 'Founder & Managing Director'
+        : '创始人兼董事总经理',
+      credentials: '',
+      experience: language === 'en'
+        ? '30+ Years APAC Experience'
+        : '30+年亚太经验',
+      bio: language === 'en'
+        ? 'A seasoned leader with over three decades of experience in accounting, financial consulting, and business advisory across the Asia-Pacific region. Carol has supported clients from SMEs to established enterprises, helping them improve financial clarity, strengthen internal processes, and achieve sustainable growth.'
+        : '一位拥有三十多年会计、财务咨询及商业顾问经验的资深领导者，活跃于整个亚太地区。Carol曾协助众多中小企业和大型企业提升财务透明度、强化内部流程并实现可持续增长。',
       achievements: language === 'en'
-        ? ['500+ Successful Client Engagements', 'Former Big 4 Senior Manager', 'Certified Public Accountant', 'ACCA Fellow Member']
-        : ['500+成功客户参与', '前四大高级经理', '注册会计师', 'ACCA会员']
-    }
+        ? [
+            '30+ Years of Professional Experience',
+            '10+ Years of Consulting Expertise',
+            '100% Client Satisfaction'
+          ]
+        : [
+            '30+年专业经验',
+            '10+年咨询经验',
+            '客户满意度100%'
+          ]
+    }    
   ];
 
   // Testimonials
@@ -390,10 +403,10 @@ export default function WealthFoundationWebsite() {
         {
           name: 'Full-Service Bookkeeping',
           name_zh: '全方位簿记服务',
-          description: 'End-to-end management of your financial transactions with meticulous accuracy',
-          description_zh: '精确管理您的财务交易的端到端管理',
-          features: ['Monthly transaction recording', 'Bank reconciliation', 'Accounts payable/receivable', 'Financial statement preparation', 'Cloud-based real-time access'],
-          features_zh: ['每月交易记录', '银行对账', '应付/应收账款', '财务报表编制', '基于云的实时访问']
+          description: 'Keen management of your transactions with meticulous accuracy',
+          description_zh: '以精准与严谨的方式管理您的财务交易',
+          features: ['Monthly transaction recording', 'Bank reconciliation', 'Accounts payable/receivable', 'Financial statement preparation', 'Fixed asset & depreciation schedule management'],
+          features_zh: ['每月交易记录', '银行对账', '应付/应收账款', '财务报表编制',  '固定资产与折旧计划管理']
         },
         {
           name: 'Financial Reporting',
@@ -474,7 +487,7 @@ export default function WealthFoundationWebsite() {
           name_zh: '财务规划与分析',
           description: 'Data-driven insights to guide strategic decisions',
           description_zh: '数据驱动的洞察以指导战略决策',
-          features: ['Budget development', 'Financial modeling', 'KPI dashboards', 'Profitability analysis', 'Investment appraisal'],
+          features: ['Budget development', 'Financial modeling', 'KPI planning', 'Profitability analysis', 'Investment appraisal'],
           features_zh: ['预算编制', '财务建模', 'KPI仪表板', '盈利能力分析', '投资评估']
         },
         {
@@ -509,7 +522,7 @@ export default function WealthFoundationWebsite() {
   useEffect(() => {
     const interval = setInterval(() => {
       setHeroSlide((prev) => (prev + 1) % heroSlides.length);
-    }, 8000);
+    }, 18000);
     return () => clearInterval(interval);
   }, [language]);
 
@@ -597,8 +610,8 @@ export default function WealthFoundationWebsite() {
               onClick={() => navigateTo('home')}
               className={`px-4 py-2 text-sm font-semibold transition-all duration-200 rounded-lg ${
                 currentPage === 'home' 
-                  ? 'text-orange-600 bg-orange-50' 
-                  : 'text-gray-700 hover:text-orange-600 hover:bg-gray-50'
+                  ? 'text-yellow-600 bg-orange-50' 
+                  : 'text-gray-700 hover:text-yellow-600 hover:bg-gray-50'
               }`}
             >
               {t.nav.home}
@@ -608,8 +621,8 @@ export default function WealthFoundationWebsite() {
               onClick={() => navigateTo('about')}
               className={`px-4 py-2 text-sm font-semibold transition-all duration-200 rounded-lg ${
                 currentPage === 'about' 
-                  ? 'text-orange-600 bg-orange-50' 
-                  : 'text-gray-700 hover:text-orange-600 hover:bg-gray-50'
+                  ? 'text-yellow-600 bg-orange-50' 
+                  : 'text-gray-700 hover:text-yellow-600 hover:bg-gray-50'
               }`}
             >
               {t.nav.about}
@@ -622,8 +635,8 @@ export default function WealthFoundationWebsite() {
                 onMouseEnter={() => setActiveServiceDropdown('services')}
                 className={`px-4 py-2 text-sm font-semibold transition-all duration-200 rounded-lg flex items-center gap-1 ${
                   currentPage === 'services' 
-                    ? 'text-orange-600 bg-orange-50' 
-                    : 'text-gray-700 hover:text-orange-600 hover:bg-gray-50'
+                    ? 'text-yellow-600 bg-orange-50' 
+                    : 'text-gray-700 hover:text-yellow-600 hover:bg-gray-50'
                 }`}
               >
                 {t.nav.services}
@@ -663,7 +676,7 @@ export default function WealthFoundationWebsite() {
 
             <button
               onClick={() => navigateTo('contact')}
-              className="ml-4 px-6 py-2.5 bg-gradient-to-r from-orange-500 to-orange-600 hover:from-orange-600 hover:to-orange-700 text-white text-sm font-semibold rounded-lg shadow-lg shadow-orange-500/25 hover:shadow-orange-500/40 transition-all duration-300 transform hover:-translate-y-0.5"
+              className="ml-4 px-6 py-2.5 bg-gradient-to-r from-yellow-500 to-yellow-500 hover:from-yellow-500 hover:to-yellow-600 text-white text-sm font-semibold rounded-lg shadow-lg shadow-orange-500/25 hover:shadow-orange-500/40 transition-all duration-300 transform hover:-translate-y-0.5"
             >
               {t.nav.contact}
             </button>
@@ -819,6 +832,10 @@ export default function WealthFoundationWebsite() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6">
           <div className="flex flex-col md:flex-row justify-between items-center gap-4">
             <p className="text-navy-400 text-sm">{t.footer.copyright}</p>
+            <p className="text-navy-500 text-xs md:text-sm mt-1">
+              Design by <span className="text-gold-400">LanceaTech</span>
+            </p>
+
             <div className="flex items-center gap-6">
               <a href="#" className="text-navy-400 hover:text-white text-sm transition-colors">{t.footer.privacy}</a>
               <a href="#" className="text-navy-400 hover:text-white text-sm transition-colors">{t.footer.terms}</a>
@@ -878,7 +895,7 @@ export default function WealthFoundationWebsite() {
                     {/* Primary CTA – unchanged */}
                     <button 
                       onClick={() => navigateTo('contact')}
-                      className="group px-8 py-4 bg-gradient-to-r from-orange-500 to-orange-600 hover:from-orange-600 hover:to-orange-700 text-white font-semibold rounded-lg shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1 flex items-center justify-center gap-2"
+                      className="group px-8 py-4 bg-gradient-to-r from-yellow-600 to-yellow-500 hover:from-orange-600 hover:to-orange-700 text-white font-semibold rounded-lg shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1 flex items-center justify-center gap-2"
                     >
                       {t.hero.cta1}
                       <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
@@ -928,10 +945,10 @@ export default function WealthFoundationWebsite() {
                 // Stats Grid
                 <div className="grid grid-cols-2 gap-6">
                   {[
-                    { number: '20+', label: language === 'en' ? 'Years Experience' : '年经验', icon: Clock },
-                    { number: '500+', label: language === 'en' ? 'Clients Served' : '服务客户', icon: Users },
-                    { number: '98%', label: language === 'en' ? 'Client Satisfaction' : '客户满意度', icon: Star },
-                    { number: 'S$50M+', label: language === 'en' ? 'Managed Annually' : '年度管理', icon: DollarSign }
+                    { number: '30+', label: language === 'en' ? 'Years Experience' : '年经验', icon: Clock },
+                    { number: '50+', label: language === 'en' ? 'Clients Served' : '服务客户', icon: Users },
+                    { number: '99%', label: language === 'en' ? 'Client Satisfaction' : '客户满意度', icon: Star },
+                    { number: '100%', label: language === 'en' ? 'Regulatory Compliance Success' : '合规成功率', icon: ShieldCheck }
                   ].map((stat, idx) => (
                     <div 
                       key={idx} 
@@ -969,7 +986,7 @@ export default function WealthFoundationWebsite() {
                         <Award className="w-7 h-7 text-white" />
                       </div>
                       <div>
-                        <p className="font-bold text-navy-800 text-lg">500+</p>
+                        <p className="font-bold text-navy-800 text-lg">50+</p>
                         <p className="text-xs text-gray-600 font-medium">
                           {language === 'en' ? 'Successful Engagements' : '成功案例'}
                         </p>
@@ -1295,21 +1312,24 @@ export default function WealthFoundationWebsite() {
               <p className="text-orange-600 font-bold tracking-widest uppercase text-sm mb-4">{t.about.storySubtitle}</p>
               <h2 className="text-4xl font-serif font-bold text-navy-900 mb-6">{t.about.storyTitle}</h2>
               <div className="prose prose-lg text-gray-700 space-y-4">
-                <p className="leading-relaxed">
-                  {language === 'en'
-                    ? "Wealth Foundation Institute was established with a clear mission: to make professional financial services accessible to businesses of all sizes. We believe that every business deserves the same quality of financial guidance that was once reserved for large corporations."
-                    : "财富基金学院的成立有一个明确的使命：让各种规模的企业都能获得专业的财务服务。我们相信，每家企业都应该获得曾经只为大型企业保留的同等质量的财务指导。"}
-                </p>
-                <p className="leading-relaxed">
-                  {language === 'en'
-                    ? "Founded in 2016, we have grown from a small boutique practice to a trusted partner for hundreds of businesses across Singapore. Our journey has been defined by our commitment to understanding each client's unique challenges and delivering tailored solutions that drive real results."
-                    : "成立于2016年，我们已从一家小型精品实践发展成为新加坡数百家企业的可靠合作伙伴。我们的旅程由我们致力于了解每个客户的独特挑战并提供推动实际成果的定制解决方案所定义。"}
-                </p>
-                <p className="leading-relaxed">
-                  {language === 'en'
-                    ? "Today, we are amongst Singapore's most respected financial consulting practices, providing a full range of accounting, business management, and financial advisory services. Our team brings together expertise from top-tier firms, combining technical excellence with practical business acumen."
-                    : "今天，我们是新加坡最受尊敬的财务咨询实践之一，提供全方位的会计、企业管理和财务咨询服务。我们的团队汇集了顶级公司的专业知识，将技术卓越与实用的商业头脑相结合。"}
-                </p>
+              <p className="leading-relaxed">
+                {language === 'en'
+                  ? "Wealth Foundation Institute was established with a clear mission: to make professional financial services accessible to businesses of all sizes. We believe that every business deserves high-quality financial guidance, not only large corporations."
+                  : "财富基金学院成立的初衷很明确：让各种规模的企业都能获得专业的财务服务。我们相信，高质量的财务指导不应只属于大型企业，每一家企业都值得拥有。"}
+              </p>
+
+              <p className="leading-relaxed">
+                {language === 'en'
+                  ? "Founded in 2016, we have grown from a small boutique practice into a trusted partner for businesses across Singapore. Our growth is built on understanding each client’s unique challenges and delivering tailored, practical solutions that create real impact."
+                  : "自2016年成立以来，我们从一间小型精品所发展成为遍布新加坡企业的可靠合作伙伴。我们的成长源于对每位客户独特挑战的深刻理解，以及提供切实可行、能带来实际效果的解决方案。"}
+              </p>
+
+              <p className="leading-relaxed">
+                {language === 'en'
+                  ? "Today, we remain a focused and agile team, allowing us to provide clients with dedicated attention and direct access to senior expertise. Clients who engage with us receive personalised guidance from our CEO, ensuring clarity, confidence, and strategic insight at every stage. We offer a full suite of accounting, business management, and financial advisory services grounded in technical expertise and real-world experience."
+                  : "如今，我们依然是一支专注且灵活的团队，使我们能够为客户提供更专注的服务，并确保他们能直接获得高级专业意见。与我们合作的客户可获得来自我们首席执行官的亲自指导，在每个阶段都能获得清晰、可靠且具有战略性的洞察。我们提供全面的会计、企业管理和财务咨询服务，以专业技术与实际经验为基础。"}
+              </p>
+
               </div>
             </div>
             
@@ -1317,9 +1337,9 @@ export default function WealthFoundationWebsite() {
               <div className="grid grid-cols-2 gap-6">
                 {[
                   { number: '2016', label: language === 'en' ? 'Year Founded' : '成立年份' },
-                  { number: '500+', label: language === 'en' ? 'Clients Served' : '服务客户' },
-                  { number: '20+', label: language === 'en' ? 'Years Combined Experience' : '综合经验年限' },
-                  { number: '98%', label: language === 'en' ? 'Client Retention Rate' : '客户保留率' }
+                  { number: '50+', label: language === 'en' ? 'Clients Served' : '服务客户' },
+                  { number: '30+', label: language === 'en' ? 'Years Combined Experience' : '综合经验年限' },
+                  { number: '99%', label: language === 'en' ? 'Client Retention Rate' : '客户保留率' }
                 ].map((stat, idx) => (
                   <div key={idx} className="bg-gradient-to-br from-navy-50 to-white p-8 rounded-2xl border-2 border-navy-200 shadow-md hover:shadow-xl transition-all">
                     <p className="text-4xl font-bold text-navy-900 mb-2">{stat.number}</p>
@@ -1396,9 +1416,14 @@ export default function WealthFoundationWebsite() {
                     </div>
                     <p className="text-navy-800 font-bold text-xl">Carol Khoo</p>
                     <p className="text-navy-600 mt-2 font-medium">
-                      {language === 'en' ? 'Founder & CEO' : '创始人兼首席执行官'}
+                      {language === 'en' ? 'Founder & Managing Director' : '创始人兼董事总经理'}
                     </p>
-                    <p className="text-gold-600 text-sm mt-1 font-semibold">CPA, ACCA, MBA</p>
+                    {/* Updated credentials line – no CPA/ACCA/MBA */}
+                    <p className="text-gold-600 text-sm mt-1 font-semibold">
+                      {language === 'en'
+                        ? '30+ Years Experience · 10+ Years Consulting'
+                        : '30+年经验 · 10+年咨询经历'}
+                    </p>
                     <div className="mt-6 pt-6 border-t border-navy-300">
                       <p className="text-navy-500 text-sm italic">
                         {language === 'en' ? 'CEO Portrait Placeholder' : '首席执行官肖像占位符'}
@@ -1415,7 +1440,9 @@ export default function WealthFoundationWebsite() {
 
             {/* CEO Bio */}
             <div className="order-1 lg:order-2">
-              <p className="text-orange-600 font-bold tracking-widest uppercase text-sm mb-4">{t.about.ceoSection}</p>
+              <p className="text-orange-600 font-bold tracking-widest uppercase text-sm mb-4">
+                {t.about.ceoSection}
+              </p>
               <h2 className="text-4xl font-serif font-bold text-navy-900 mb-2">Carol Khoo</h2>
               <p className="text-xl text-gold-600 font-semibold mb-6">
                 {language === 'en' ? 'Founder & Managing Director' : '创始人兼董事总经理'}
@@ -1424,22 +1451,22 @@ export default function WealthFoundationWebsite() {
               <div className="prose prose-lg text-gray-700 mb-8 space-y-4">
                 <p className="leading-relaxed">
                   {language === 'en'
-                    ? "Carol brings over 20 years of APAC regional experience with specialized expertise in financial consulting and business advisory. As a Certified Public Accountant and ACCA Fellow Member, she has guided hundreds of businesses from startups to established enterprises."
-                    : "Carol拥有超过20年的亚太地区经验，在财务咨询和业务顾问方面具有专业知识。作为注册会计师和ACCA会员，她已指导数百家企业从初创企业到成熟企业。"}
+                    ? "Carol brings over 30 years of experience in accounting, financial consulting, and business advisory across the Asia-Pacific region. She has supported a wide range of clients, from SMEs to established companies, helping them strengthen financial clarity, improve internal structures, and achieve sustainable growth."
+                    : "Carol在会计、财务咨询与商业顾问领域拥有超过30年的经验，服务范围遍及亚太地区。她曾协助众多中小型及成熟企业提升财务透明度、优化内部结构，并实现可持续增长。"}
                 </p>
                 <p className="leading-relaxed">
                   {language === 'en'
-                    ? "Her background includes senior positions at Big 4 accounting firms, where she developed deep expertise in audit, tax planning, and business advisory. Carol founded Wealth Foundation Institute with a vision to make enterprise-grade financial services accessible to growing businesses."
-                    : "她的背景包括在四大会计师事务所的高级职位，在那里她在审计、税务规划和业务咨询方面发展了深厚的专业知识。Carol创立了财富基金学院，旨在让成长型企业能够获得企业级财务服务。"}
+                    ? "For more than 10 years, Carol has focused on hands-on consulting, working closely with business owners as a trusted advisor. As the founder of Wealth Foundation Institute, she remains directly involved in client engagements, ensuring that every relationship benefits from senior-level insight, practical guidance, and a personalised approach."
+                    : "在过去10余年中，Carol专注于一线咨询工作，作为值得信赖的顾问与企业主紧密合作。作为财富基金学院的创始人，她始终亲自参与客户项目，为每一位客户提供资深视角、务实建议与个性化服务。"}
                 </p>
               </div>
 
               <div className="grid grid-cols-2 gap-4">
                 {[
-                  { icon: Briefcase, text: language === 'en' ? '500+ Client Engagements' : '500+客户参与' },
-                  { icon: Award, text: language === 'en' ? 'Former Big 4 Senior Manager' : '前四大高级经理' },
-                  { icon: Shield, text: language === 'en' ? 'Certified Public Accountant' : '注册会计师' },
-                  { icon: Globe, text: language === 'en' ? 'APAC Regional Expert' : '亚太地区专家' }
+                  { icon: Briefcase, text: language === 'en' ? '30+ Years of Experience' : '30+年专业经验' },
+                  { icon: Award, text: language === 'en' ? '10+ Years of Consulting' : '10+年咨询经验' },
+                  { icon: Shield, text: language === 'en' ? '100% Client Satisfaction' : '客户满意度100%' },
+                  { icon: Globe, text: language === 'en' ? 'Serving Businesses Across APAC' : '服务亚太地区企业' }
                 ].map((item, idx) => (
                   <div key={idx} className="flex items-center gap-3 text-navy-800">
                     <item.icon className="w-6 h-6 text-gold-600 flex-shrink-0" />
@@ -1451,6 +1478,7 @@ export default function WealthFoundationWebsite() {
           </div>
         </div>
       </section>
+
 
       {/* Why Choose Us */}
       <section className="py-24 bg-navy-900 relative overflow-hidden">
@@ -1492,8 +1520,8 @@ export default function WealthFoundationWebsite() {
                 icon: Award, 
                 title: language === 'en' ? 'Proven Track Record' : '经验证的业绩', 
                 description: language === 'en'
-                  ? '98% client satisfaction with 500+ successful engagements'
-                  : '98%客户满意度，500+成功案例'
+                  ? '98% client satisfaction with 50+ successful engagements'
+                  : '98%客户满意度，50+成功案例'
               }
             ].map((item, idx) => (
               <div key={idx} className="bg-white/10 backdrop-blur-sm border-2 border-white/30 rounded-2xl p-8 text-center hover:bg-white/15 hover:border-gold-400/50 transition-all duration-300">
@@ -1632,7 +1660,9 @@ export default function WealthFoundationWebsite() {
 
                           <button 
                             onClick={() => navigateTo('contact')}
-                            className="mt-6 w-full py-3 border-2 border-navy-300 text-navy-800 font-semibold rounded-lg hover:bg-navy-900 hover:text-white hover:border-navy-900 transition-all duration-300"
+                            className="mt-6 w-full py-3 border-2 border-navy-300 text-navy-800 font-semibold rounded-lg 
+                                      hover:bg-navy-900 hover:text-orange-600 hover:border-orange-600 
+                                      transition-all duration-300"
                           >
                             {language === 'en' ? 'Get a Quote' : '获取报价'}
                           </button>
