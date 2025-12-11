@@ -964,26 +964,23 @@ export default function WealthFoundationWebsite() {
                 </div>
               ) : (
                 // CEO Image Placeholder
-                <div className="relative">
-                  <div className="aspect-[3/4] max-w-md mx-auto bg-gradient-to-br from-navy-700 to-navy-800 rounded-3xl overflow-hidden border-4 border-gold-400/40 shadow-2xl">
-                    <div className="absolute inset-0 flex items-center justify-center">
-                      <div className="text-center">
-                        <div className="w-32 h-32 bg-gradient-to-br from-gold-400 to-gold-600 rounded-full mx-auto mb-6 flex items-center justify-center shadow-xl">
-                          <Users className="w-16 h-16 text-white" />
-                        </div>
-                        <p className="text-gold-400 font-semibold text-lg">CEO Portrait</p>
-                        <p className="text-navy-400 text-sm mt-2">{language === 'en' ? 'Image Placeholder' : '图片占位符'}</p>
-                      </div>
-                    </div>
-                    {/* Decorative Elements */}
-                    <div className="absolute top-4 right-4 w-20 h-20 border-3 border-gold-400/40 rounded-full"></div>
-                    <div className="absolute bottom-4 left-4 w-16 h-16 border-3 border-gold-400/40 rounded-full"></div>
+                <div className="relative mx-auto w-full max-w-xs sm:max-w-sm">
+
+                  <div className="aspect-[3/4] rounded-3xl overflow-hidden border-4 border-gold-400/40 shadow-2xl relative">
+
+                    <Image
+                      src="/profileceo.jpeg"
+                      alt="Carol Khoo - CEO"
+                      fill
+                      className="object-cover"
+                      priority
+                    />
                   </div>
                   
                   {/* Floating Badge */}
                   <div className="absolute -bottom-4 -right-4 bg-white rounded-xl p-5 shadow-2xl border-2 border-gold-400/20">
                     <div className="flex items-center gap-3">
-                      <div className="w-14 h-14 bg-gradient-to-br from-orange-500 to-orange-600 rounded-lg flex items-center justify-center">
+                      <div className="w-14 h-14 bg-gradient-to-br from-yellow-500 to-yellow-600 rounded-lg flex items-center justify-center">
                         <Award className="w-7 h-7 text-white" />
                       </div>
                       <div>
@@ -1407,37 +1404,21 @@ export default function WealthFoundationWebsite() {
       <section className="py-24 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid lg:grid-cols-2 gap-16 items-center">
-            {/* CEO Image Placeholder */}
+            {/* CEO Image */}
             <div className="relative order-2 lg:order-1">
-              <div className="aspect-[3/4] max-w-md mx-auto bg-gradient-to-br from-navy-100 to-navy-200 rounded-3xl overflow-hidden shadow-2xl border-4 border-gold-400/30">
-                <div className="absolute inset-0 flex items-center justify-center">
-                  <div className="text-center p-8">
-                    <div className="w-40 h-40 bg-gradient-to-br from-gold-400 to-gold-600 rounded-full mx-auto mb-8 flex items-center justify-center shadow-xl">
-                      <Users className="w-20 h-20 text-white" />
-                    </div>
-                    <p className="text-navy-800 font-bold text-xl">Carol Khoo</p>
-                    <p className="text-navy-600 mt-2 font-medium">
-                      {language === 'en' ? 'Founder & Managing Director' : '创始人兼董事总经理'}
-                    </p>
-                    {/* Updated credentials line – no CPA/ACCA/MBA */}
-                    <p className="text-gold-600 text-sm mt-1 font-semibold">
-                      {language === 'en'
-                        ? '30+ Years Experience · 10+ Years Consulting'
-                        : '30+年经验 · 10+年咨询经历'}
-                    </p>
-                    <div className="mt-6 pt-6 border-t border-navy-300">
-                      <p className="text-navy-500 text-sm italic">
-                        {language === 'en' ? 'CEO Portrait Placeholder' : '首席执行官肖像占位符'}
-                      </p>
-                    </div>
-                  </div>
+              <div className="mx-auto w-full max-w-xs sm:max-w-sm">
+                <div className="aspect-[3/4] rounded-3xl overflow-hidden shadow-2xl border-4 border-gold-400/30 relative">
+                  <Image
+                    src="/profileceo.jpeg"
+                    alt="Carol Khoo - Founder & Managing Director"
+                    fill
+                    className="object-cover"
+                    priority
+                  />
                 </div>
               </div>
-              
-              {/* Decorative Elements */}
-              <div className="absolute -top-6 -left-6 w-24 h-24 bg-gold-400/30 rounded-2xl"></div>
-              <div className="absolute -bottom-6 -right-6 w-32 h-32 bg-orange-400/30 rounded-2xl"></div>
             </div>
+
 
             {/* CEO Bio */}
             <div className="order-1 lg:order-2">
