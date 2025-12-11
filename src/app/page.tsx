@@ -99,7 +99,8 @@ export default function WealthFoundationWebsite() {
   const [expandedService, setExpandedService] = useState<string | null>(null);
   const [visibleSections, setVisibleSections] = useState<Record<string, boolean>>({});
   const sectionRefs = useRef<Record<string, HTMLElement | null>>({});
-  const [state, handleSubmit] = useForm("myzpgkkr");
+  const [state, handleSubmit] = useForm("xkgdqlyp");
+
 
   // Translations
   const translations: Translations = {
@@ -157,7 +158,7 @@ export default function WealthFoundationWebsite() {
         quickLinks: 'Quick Links',
         ourServices: 'Our Services',
         contactUs: 'Contact Us',
-        copyright: '© 2024 Wealth Foundation Institute Pte Ltd. All rights reserved.',
+        copyright: '© 2016 Wealth Foundation Institute Pte Ltd. All rights reserved.',
         privacy: 'Privacy Policy',
         terms: 'Terms of Service'
       },
@@ -259,7 +260,7 @@ export default function WealthFoundationWebsite() {
         quickLinks: '快速链接',
         ourServices: '我们的服务',
         contactUs: '联系我们',
-        copyright: '© 2024 财富基金学院私人有限公司。保留所有权利。',
+        copyright: '© 2016 财富基金学院私人有限公司。保留所有权利。',
         privacy: '隐私政策',
         terms: '服务条款'
       },
@@ -816,7 +817,7 @@ export default function WealthFoundationWebsite() {
               </div>
               <div className="flex items-start gap-3">
                 <Mail className="w-5 h-5 text-gold-400 mt-0.5 flex-shrink-0" />
-                <a href="mailto:carol2kmg@yahoo.com.sg" className="text-navy-300 hover:text-white transition-colors text-sm">carol2kmg@yahoo.com.sg</a>
+                <a href="mailto:carolkhoo.wfi@gmail.com" className="text-navy-300 hover:text-white transition-colors text-sm">carolkhoo.wfi@gmail.com</a>
               </div>
               <div className="flex items-start gap-3">
                 <MapPin className="w-5 h-5 text-gold-400 mt-0.5 flex-shrink-0" />
@@ -1872,7 +1873,7 @@ export default function WealthFoundationWebsite() {
                     </div>
                     <div>
                       <p className="text-navy-600 text-sm mb-1">{t.contact.emailUs}</p>
-                      <a href="mailto:carol2kmg@yahoo.com.sg" className="text-xl font-bold hover:text-gold-400 transition-colors break-all">carol2kmg@yahoo.com.sg</a>
+                      <a href="mailto:carolkhoo.wfi@gmail.com" className="text-xl font-bold hover:text-gold-400 transition-colors break-all">carolkhoo.wfi@gmail.com</a>
                     </div>
                   </div>
 
