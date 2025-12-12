@@ -136,7 +136,7 @@ export default function WealthFoundationWebsite() {
         growth: 'Growth Bottlenecks',
         growthDesc: 'Ready to scale but lacking the financial infrastructure and insights to do it confidently?',
         cta: "Let's Solve This Together",
-        message: "You're not alone. We've helped hundreds of businesses overcome these exact challenges."
+        message: "You're not alone. We've helped many businesses overcome these exact challenges."
       },
       services: {
         title: 'Comprehensive Business Solutions',
